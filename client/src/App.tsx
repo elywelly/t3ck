@@ -1,6 +1,6 @@
 // ABIs
 import React, { useEffect, useState } from "react";
-// import TokenMaster from "./abis/TokenMaster.json";
+// import TECK from "./abis/TECK.json";
 // // Config
 // import config from "./config.json";
 

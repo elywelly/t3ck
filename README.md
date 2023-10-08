@@ -43,4 +43,4 @@ In a separate terminal execute:
 
 --
 
-##### Credits: Dapp University - backend
+##### Credits: Dapp University - Solidity code

@@ -1,9 +1,9 @@
 // ABIs
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";
-import Teck from "../../server/blockchain/abis/Teck.json";
+import Teck from "../src/blockchain/abis/Teck.json";
 // Config
-import config from "../../server/blockchain/config.json";
+import config from "../src/blockchain/config.json";
 
 declare global {
   interface Window {

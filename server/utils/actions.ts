@@ -33,7 +33,7 @@ export const createOccasion = async (occasion: Occasion) => {
 };
 
 export const createTicket = async (ticket: Ticket) => {
-  const { user_id, event_id, ticket_code, purchase_date, seat_number } = ticket;
+  const { user_id, event_id, ticket_code, seat_number } = ticket;
   const addTicket = await db.ticket.create({
     data: {
       user_id,

@@ -7,35 +7,24 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Users {
-  user_id       Int       @id @default(autoincrement())
-  username      String
-  email         String    @unique
-  password_hash String
-  createdAt     DateTime  @default(now())
-  tickets       Tickets[]
-}
-
 model Events {
-  event_id    Int       @id @default(autoincrement())
+  event_id    Int      @id @default(autoincrement())
   name        String
   description String
   date        DateTime
   time        String
   location    String
   max_tickets Int
-  createdAt   DateTime  @default(now())
-  tickets     Tickets[]
+  createdAt   DateTime @default(now())
+  tickets     Ticket[]
 }
 
-model Tickets {
-  ticket_id     Int      @id @default(autoincrement())
-  user_id       Int
-  event_id      Int
-  ticket_code   String   @unique
-  purchase_date DateTime
-  seat_number   String?
-  createdAt     DateTime @default(now())
-  event         Events   @relation(fields: [event_id], references: [event_id])
-  user          Users    @relation(fields: [user_id], references: [user_id])
+model Ticket {
+  ticket_id   Int      @id @default(autoincrement())
+  user_id     String
+  event_id    Int
+  ticket_code String   @unique
+  seat_number String?  @unique
+  createdAt   DateTime @default(now())
+  event       Events   @relation(fields: [event_id], references: [event_id])
 }

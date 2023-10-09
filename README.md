@@ -23,22 +23,34 @@ T3CK is the ultimate ticket marketplace revolutionizing the way to buy and sell 
 - Install [MetaMask](https://metamask.io/) on your browser.
 
 ## Setting Up
-### 1. Clone/Download the Repository
+### 1. Clone the Repository
 
-### 2. Install Dependencies:
+### 2. Install Dependencies for server and client folder:
+`$ cd client`
 `$ npm install`
 
-### 3. Run tests
+`$ cd server`
+`$ npm install`
+
+### 3. Run tests for hardhat
+`$ cd server`
 `$ npx hardhat test`
 
 ### 4. Start Hardhat node
+`$ cd server`
 `$ npx hardhat node`
 
 ### 5. Run deployment script
 In a separate terminal execute:
+`$ cd server`
 `$ npx hardhat run ./scripts/deploy.js --network localhost`
 
 ### 6. Start frontend
+`$ cd client`
+`$ npm run start`
+
+### 7. Start backend
+`$ cd server`
 `$ npm run start`
 
 --

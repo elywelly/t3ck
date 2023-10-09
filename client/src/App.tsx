@@ -1,9 +1,9 @@
 // ABIs
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";
-import Teck from "../src/blockchain/abis/Teck.json";
+import Teck from "../../server/blockchain/abis/Teck.json";
 // Config
-import config from "../src/blockchain/config.json";
+import config from "../../server/blockchain/config.json";
 
 declare global {
   interface Window {
@@ -64,7 +64,7 @@ function App() {
       <div>{message}</div>
       <div>{account}</div>
       {occasions.map((occasion, index) => {
-        return <div>{occasion.name}</div>;
+        return <div key={index}>{occasion.name}</div>;
       })}
     </>
   );

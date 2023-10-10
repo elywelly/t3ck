@@ -11,6 +11,7 @@ model Events {
   event_id    Int      @id @default(autoincrement())
   name        String
   description String
+  cost        Float
   date        DateTime
   time        String
   location    String

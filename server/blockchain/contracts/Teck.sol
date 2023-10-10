@@ -44,6 +44,7 @@ contract Teck is ERC721 {
         string memory _time,
         string memory _location
     ) public onlyOwner {
+        // creates occasion
         totalOccasions++;
         occasions[totalOccasions] = Occasion(
             totalOccasions,
@@ -57,14 +58,15 @@ contract Teck is ERC721 {
         );
     }
 
+    // create tickets - payable so it can take in crypto
     function mint(uint256 _id, uint256 _seat) public payable {
         require(_id != 0);
         require(_id <= totalOccasions);
 
-        // Require that ETH sent is greater than cost...
+        // Require that ETH sent is greater than cost
         require(msg.value >= occasions[_id].cost);
 
-        // Require that the seat is not taken, and the seat exists...
+        // Require that the seat is not taken, and the seat exists
         require(seatTaken[_id][_seat] == address(0));
         require(_seat <= occasions[_id].maxTickets);
 
@@ -88,6 +90,7 @@ contract Teck is ERC721 {
         return seatsTaken[_id];
     }
 
+    // owner to be able to withdraw
     function withdraw() public onlyOwner {
         (bool success, ) = owner.call{value: address(this).balance}("");
         require(success);

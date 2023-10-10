@@ -3,6 +3,7 @@ CREATE TABLE "Events" (
     "event_id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
     "description" TEXT NOT NULL,
+    "cost" DOUBLE PRECISION NOT NULL,
     "date" TIMESTAMP(3) NOT NULL,
     "time" TEXT NOT NULL,
     "location" TEXT NOT NULL,

@@ -4,6 +4,7 @@ const NAME = "Teck";
 const SYMBOL = "T3CK";
 
 const OCCASION_NAME = "Taylor Swift Eras Tour";
+const OCCASION_DESCRIPTION = "World Tour Happening Everywhere";
 const OCCASION_COST = ethers.utils.parseUnits("1", "ether");
 const OCCASION_MAX_TICKETS = 100;
 const OCCASION_DATE = "24 February 2024";
@@ -26,6 +27,7 @@ describe("T3CK", () => {
       .connect(deployer)
       .list(
         OCCASION_NAME,
+        OCCASION_DESCRIPTION,
         OCCASION_COST,
         OCCASION_MAX_TICKETS,
         OCCASION_DATE,
@@ -55,6 +57,7 @@ describe("T3CK", () => {
       const occasion = await teck.getOccasion(1);
       expect(occasion.id).to.be.equal(1);
       expect(occasion.name).to.be.equal(OCCASION_NAME);
+      expect(occasion.description).to.be.equal(OCCASION_DESCRIPTION);
       expect(occasion.cost).to.be.equal(OCCASION_COST);
       expect(occasion.tickets).to.be.equal(OCCASION_MAX_TICKETS);
       expect(occasion.date).to.be.equal(OCCASION_DATE);

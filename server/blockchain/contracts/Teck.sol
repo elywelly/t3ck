@@ -11,6 +11,7 @@ contract Teck is ERC721 {
     struct Occasion {
         uint256 id;
         string name;
+        string description;
         uint256 cost;
         uint256 tickets;
         uint256 maxTickets;
@@ -38,6 +39,7 @@ contract Teck is ERC721 {
 
     function list(
         string memory _name,
+        string memory _description,
         uint256 _cost,
         uint256 _maxTickets,
         string memory _date,
@@ -49,6 +51,7 @@ contract Teck is ERC721 {
         occasions[totalOccasions] = Occasion(
             totalOccasions,
             _name,
+            _description,
             _cost,
             _maxTickets,
             _maxTickets,

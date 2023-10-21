@@ -13,6 +13,10 @@ import AdbIcon from '@mui/icons-material/Adb';
 
 const pages = ['Sports', 'Music', 'Shows'];
 
+export function ConnectButton() {
+  return <w3m-button />
+}
+
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
@@ -88,6 +92,7 @@ function NavBar() {
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
+              <ConnectButton />
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -120,8 +125,8 @@ function NavBar() {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-             <Button
+          <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
+             {/* <Button
                 onClick={handleCloseNavMenu}
                 sx={{ 
                   backgroundColor: 'blue', 
@@ -134,7 +139,8 @@ function NavBar() {
                 } }}
               >
                 Connect Wallet
-              </Button>
+              </Button> */}
+              <ConnectButton />
           </Box>
         </Toolbar>
       </Container>

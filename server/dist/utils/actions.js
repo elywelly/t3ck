@@ -16,11 +16,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.createTicket = exports.createOccasion = void 0;
 const db_1 = __importDefault(require("./db"));
 const createOccasion = (occasion) => __awaiter(void 0, void 0, void 0, function* () {
-    const { name, description, date, time, location, max_tickets } = occasion;
+    const { name, description, cost, date, time, location, max_tickets } = occasion;
     const addOccasion = yield db_1.default.events.create({
         data: {
             name,
             description,
+            cost,
             date,
             time,
             location,

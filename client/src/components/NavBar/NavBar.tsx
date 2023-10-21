@@ -10,12 +10,9 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import ConnectButton from '../ConnectButton/ConnectButton';
 
 const pages = ['Sports', 'Music', 'Shows'];
-
-export function ConnectButton() {
-  return <w3m-button />
-}
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -37,7 +34,7 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ color: 'blue', backgroundColor: 'transparent', boxShadow: 'none' }}>
+    <AppBar position="static" sx={{ color: '#47A1FF', backgroundColor: 'transparent', boxShadow: 'none' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -126,20 +123,6 @@ function NavBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
-             {/* <Button
-                onClick={handleCloseNavMenu}
-                sx={{ 
-                  backgroundColor: 'blue', 
-                  color: 'white', 
-                  fontSize: '10px',
-                  fontWeight: 'bold', 
-                  display: 'block', 
-                  '&:hover': {
-                  backgroundColor: "black",
-                } }}
-              >
-                Connect Wallet
-              </Button> */}
               <ConnectButton />
           </Box>
         </Toolbar>

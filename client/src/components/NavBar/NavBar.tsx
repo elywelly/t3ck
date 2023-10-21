@@ -14,7 +14,6 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
 const pages = ['Sports', 'Music', 'Shows'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -36,7 +35,7 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ color: 'blue', backgroundColor: 'white' }}>
+    <AppBar position="static" sx={{ color: 'blue', backgroundColor: 'transparent', boxShadow: 'none' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -46,7 +45,7 @@ function NavBar() {
             component="a"
             href="#app-bar-with-responsive-menu"
             sx={{
-              mr: 2,
+              mr: 5,
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,
@@ -100,7 +99,6 @@ function NavBar() {
             component="a"
             href="#app-bar-with-responsive-menu"
             sx={{
-              mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
               fontFamily: 'monospace',
@@ -117,7 +115,7 @@ function NavBar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', fontWeight: 'bold', display: 'block' }}
+                sx={{ my: 2, color: 'black', fontWeight: 'bold', display: 'block', mx: 3 }}
               >
                 {page}
               </Button>
@@ -125,33 +123,20 @@ function NavBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+             <Button
+                onClick={handleCloseNavMenu}
+                sx={{ 
+                  backgroundColor: 'blue', 
+                  color: 'white', 
+                  fontSize: '10px',
+                  fontWeight: 'bold', 
+                  display: 'block', 
+                  '&:hover': {
+                  backgroundColor: "black",
+                } }}
+              >
+                Connect Wallet
+              </Button>
           </Box>
         </Toolbar>
       </Container>

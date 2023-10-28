@@ -14,7 +14,7 @@ import ConnectButton from '../ConnectButton/ConnectButton';
 
 const pages = ['Sports', 'Music', 'Shows'];
 
-function NavBar() {
+const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 

@@ -25,39 +25,39 @@ function App() {
   const [occasions, setOccasions] = useState<any[]>([]);
   const [toggle, setToggle] = useState<boolean>(false);
 
-  // const loadBlockchainData = async () => {
-  //   const provider = new ethers.providers.Web3Provider(window.ethereum);
-  //   setProvider(provider);
+  const loadBlockchainData = async () => {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    setProvider(provider);
 
-  //   const network = await provider.getNetwork();
-  //   const address = (config as any)[network.chainId].Teck.address;
-  //   const teck = new ethers.Contract(address, Teck, provider);
-  //   setTeck(teck);
+    const network = await provider.getNetwork();
+    const address = (config as any)[network.chainId].Teck.address;
+    const teck = new ethers.Contract(address, Teck, provider);
+    setTeck(teck);
 
-  //   const totalOccasions = await teck.totalOccasions();
-  //   const occasions = [];
+    const totalOccasions = await teck.totalOccasions();
+    const occasions = [];
 
-  //   for (var i = 1; i <= totalOccasions; i++) {
-  //     const occasion = await teck.getOccasion(i);
-  //     occasions.push(occasion);
-  //   }
+    for (var i = 1; i <= totalOccasions; i++) {
+      const occasion = await teck.getOccasion(i);
+      occasions.push(occasion);
+    }
 
-  //   setOccasions(occasions);
+    setOccasions(occasions);
 
-  //   window.ethereum.on("accountsChanged", async () => {
-  //     const accounts = await window.ethereum.request({
-  //       method: "eth_requestAccounts",
-  //     });
-  //     const account = ethers.utils.getAddress(accounts[0]);
-  //     setAccount(account);
-  //   });
-  // };
+    window.ethereum.on("accountsChanged", async () => {
+      const accounts = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      const account = ethers.utils.getAddress(accounts[0]);
+      setAccount(account);
+    });
+  };
 
   useEffect(() => {
     fetch("/hi")
       .then((res) => res.json())
       .then((data) => setMessage(data.message));
-    // loadBlockchainData();
+    loadBlockchainData();
   }, []);
 
   return (

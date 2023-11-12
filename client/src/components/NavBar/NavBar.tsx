@@ -138,7 +138,6 @@ const NavBar = () => {
               </Button>
             ))}
           </Box>
-
           <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
             <ConnectButton />
           </Box>

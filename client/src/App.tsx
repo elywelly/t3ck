@@ -5,6 +5,8 @@ import Teck from "../src/blockchain/abis/Teck.json";
 // Config
 import config from "../src/blockchain/config.json";
 import NavBar from "./components/NavBar/NavBar";
+import SearchField from "./components/SearchField/SearchField";
+import Featured from "./components/Featured/Featured";
 
 declare global {
   interface Window {
@@ -64,6 +66,8 @@ function App() {
   return (
     <>
       <NavBar />
+      <SearchField />
+      <Featured />
       <div>{message}</div>
       <div>{account}</div>
       {occasions.map((occasion, index) => {

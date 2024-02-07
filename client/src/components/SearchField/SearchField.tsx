@@ -6,19 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Fragment, useEffect, useState } from "react";
-import { ticketEvent } from "../../common/ticketEvent";
-
-interface TicketEvent {
-  name: string;
-  image: string;
-  description: string;
-  cost: number;
-  date: string;
-  time: string;
-  location: string;
-  tickets: number;
-  category: string;
-}
+import { TicketEvent, ticketEvent } from "../../common/ticketEvent";
 
 function sleep(duration: number): Promise<void> {
   return new Promise<void>((resolve) => {

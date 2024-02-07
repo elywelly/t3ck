@@ -1,3 +1,15 @@
+export interface TicketEvent {
+  name: string;
+  image: string;
+  description: string;
+  cost: number;
+  date: string;
+  time: string;
+  location: string;
+  tickets: number;
+  category: string;
+}
+
 export const ticketEvent = [
   {
     name: "Lauv",

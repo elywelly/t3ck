@@ -14,7 +14,9 @@ The idea if for the smart contract to store details of the events and owner of t
 
 Whilst this may seem counter productive to have two separate sources updating, the initial idea of the DB design is more for a later iteration where user functionalities expand beyond just connecting their Metamask wallets. Having another source to store data also makes it easier to track events movements, but a consideration could be possibility of movements of tickets itself from wallet to wallet outside of the platform. The `userId` will then render useless in the DB as it has switched hands extnernally. A way to counter that could be through capturing instead use metamask connections - a later part to explore.
 
-As this is part of an experimental learning project, I'm leaving the backend part of it in to experiment with different ways of building it. A possibility could be two different versions - one with blockchain and one without as regular site.
+As this is part of an experimental learning project, I'm leaving the backend part of it in to experiment with different ways of building it. A possibility could be two different versions - one with blockchain (V1) and one without as regular ticketing without blockchains and NFTs (V2).
+
+After setting up the smart contracts and basic backend, I'm building up the UI with hardcoded data first. The next steps would be to update it with data from the smart contract (V1) or Database (V2).
 
 ## Tech Stack & Tools
 

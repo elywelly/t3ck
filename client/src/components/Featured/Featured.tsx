@@ -34,11 +34,12 @@ const Featured = () => {
       }}
     >
       {getThreeFeaturedEvents.map((index: number) => (
-        <Card sx={{ maxWidth: 345, margin: "10px 50px" }}>
+        <Card sx={{ maxWidth: 350, margin: "10px 20px" }}>
           <CardActionArea>
             <CardMedia
               component="img"
-              width="700"
+              width="300"
+              height="350"
               image={ticketEvent[index].image}
               alt={ticketEvent[index].name}
             />
